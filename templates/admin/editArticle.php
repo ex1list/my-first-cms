@@ -6,11 +6,13 @@
         echo "<pre>"; ?> Данные о массиве $results и типе формы передаются корректно-->
 
         <h1><?php echo $results['pageTitle']?></h1>
-
+       
         <form action="admin.php?action=<?php echo $results['formAction']?>" method="post">
             <input type="hidden" name="articleId" value="<?php echo $results['article']->id ?>">
+ 
 
-    <?php if ( isset( $results['errorMessage'] ) ) { ?>
+  
+    <?php /*var_dump($results); die(); */ if ( isset( $results['errorMessage'] ) ) { ?>
             <div class="errorMessage"><?php echo $results['errorMessage'] ?></div>
     <?php } ?>
 
@@ -31,6 +33,9 @@
                 <textarea name="content" id="content" placeholder="The HTML content of the article" required maxlength="100000" style="height: 30em;"><?php echo htmlspecialchars( $results['article']->content )?></textarea>
               </li>
 
+             
+              
+              
               <li>
                 <label for="categoryId">Article Category</label>
                 <select name="categoryId">
@@ -40,12 +45,65 @@
                 <?php } ?>
                 </select>
               </li>
+              
+              
+             <!--  <?php  var_dump($results['article']->SubcategoryId)  ?> -->
+              
+
+
+
+               <li>
+                <label for="SubcategoryId">Article SubCategory</label>
+                <select name="SubcategoryId"> 
+
+                <?php foreach ($results['categories'] as $category ) {  ?>
+                  <optgroup label="<?php echo htmlspecialchars($category->name) ?>">
+                    <?php foreach ($results['subcategories'] as $subcategory ) {  
+                      if ($category->id == $subcategory->category_id) {
+                    ?>
+                      <option value="<?php echo $subcategory->id?>"
+                        <?php echo ( $subcategory->id == $results['article']->SubcategoryId ) 
+                        ? " selected" : ""?>>
+                        <?php echo htmlspecialchars( $subcategory->Subname )?> 
+                      </option>
+                      <?php }
+                    }   ?>   
+                  </optgroup> 
+               <?php }     ?>  
+
+            
+
+                </select>
+            
+               </li>
+         
+            <li>
+              <label for="Author">Author</label>
+                    <select name="groups[]" multiple="" size="10" >
+                    <?php foreach (  $resultsz['user_result']  as $author ) { ?>
+              <option value="<?php echo $author->id?>" <?php /*echo ( $category->id == $results['article']->categoryId ) ? " selected" : "" */?>><?php echo htmlspecialchars( $author->login)?></option>
+
+                <?php } ?>
+                  </select>
+
+
+           
+            
+
+
+            </li>
+       
+             
 
               <li>
                 <label for="publicationDate">Publication Date</label>
                 <input type="date" name="publicationDate" id="publicationDate" placeholder="YYYY-MM-DD" required maxlength="10" value="<?php echo $results['article']->publicationDate ? date( "Y-m-d", $results['article']->publicationDate ) : "" ?>" />
               </li>
-
+              <li>   
+                <label for="Active">Active</label>
+                <input type=hidden name="Active" value="0" >
+                <input type=checkbox name="Active" value="1" >
+              </li>
 
             </ul>
 

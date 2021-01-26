@@ -18,7 +18,7 @@ try {
     $CmsConfiguration["HOMEPAGE_NUM_ARTICLES"] = 5;
     $CmsConfiguration["ADMIN_USERNAME"] = "admin";
     $CmsConfiguration["ADMIN_PASSWORD"] = "mypass";
-    
+
     
     include 'config-local.php'; /* подключаем локальный конфигурационный файл
      *  (для конкретной машины/сервера),
@@ -31,7 +31,8 @@ try {
     // Подключаем Классы моделей (классы, отвечающие за работу с сущностями базы данных)
     require(CLASS_PATH . "/Article.php");
     require(CLASS_PATH . "/Category.php");     
-
+    require(CLASS_PATH . "/Users.php"); 
+    require(CLASS_PATH . "/SubCategories.php"); 
 } catch (Exception $ex) {
     echo "При загрузке конфигураций возникла проблема!<br><br>";
     error_log($ex->getMessage());

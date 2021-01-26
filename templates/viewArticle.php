@@ -9,7 +9,15 @@
         in 
         <a href="./?action=archive&amp;categoryId=<?php echo $results['category']->id?>">
             <?php echo htmlspecialchars($results['category']->name) ?>
-        </a>
+        in                               
+        </a> 
+          <!--  <?php echo htmlspecialchars(var_dump($article)) ?> -->
+              
+               
+   
+              
+              
+         
     <?php } ?>
         
     </p>

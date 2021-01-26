@@ -3,14 +3,14 @@
 body {
   margin: 0;
   color: #333;
-  background-color: #00a0b0;
+  background-color: #FFFFFF;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   line-height: 1.5em;
 }
 
 #container {
   width: 960px;
-  background: #fff;
+  background: #00B5FF;
   margin: 20px auto;
   padding: 20px;
   -moz-border-radius: 5px;
@@ -46,13 +46,14 @@ body {
 /* Заголвки */
 
 h1 {
-  color: #eb6841;
+  color: #FFFFFF;
   margin-bottom: 30px;
   line-height: 1.2em;
 }
 
 h2, h2 a {
-  color: #edc951;
+  color: #FFFFFF;
+  font-size: 1.5em;
 }
 
 h2 a {
@@ -79,7 +80,7 @@ h3.categoryDescription {
 
 .pubDate {
   font-size: .8em;
-  color: #eb6841;
+  color: #FFFFFF;
   text-transform: uppercase;
 }
 
@@ -106,13 +107,13 @@ h3.categoryDescription {
   font-style: italic;
   font-weight: normal;
   font-size: 60%;
-  color: #999;
+  color: #FFFF00;
   display: block;
   line-height: 2em;
 }
 
 .category a {
-  color: #999;
+  color: #FFFFFF;
   text-decoration: underline;
 }
 
@@ -255,7 +256,7 @@ input[type="submit"] {
   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  color: #fff;
+  color: #FFFFFF;
   background: #ef7d50;
   font-weight: bold;
   -webkit-appearance: none;
@@ -264,7 +265,7 @@ input[type="submit"] {
 input[type="submit"]:hover, input[type="submit"]:active {
   cursor: pointer;
   background: #fff;
-  color: #ef7d50;
+  color: #00B500;
 }
 
 input[type="submit"]:active {
@@ -296,7 +297,7 @@ th {
   border-left: none;
   border-right: none;
   background: #ef7d50;
-  color: #fff;
+  color: #FFFF00;
   cursor: default;
 }
 

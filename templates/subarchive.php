@@ -2,8 +2,8 @@
 	  
     <h1><?php echo htmlspecialchars( $results['pageHeading'] ) ?></h1>
     
-    <?php if ( $results['category'] ) { ?>
-    <h3 class="categoryDescription"><?php echo htmlspecialchars( $results['category']->description ) ?></h3>
+    <?php if ( $results['subcategory'] ) { ?>
+    <h3 class="categoryDescription"><?php echo htmlspecialchars( $results['subcategory']->Subdescription ) ?></h3>
     <?php } ?>
 
     <ul id="headlines" class="archive">
@@ -19,11 +19,11 @@
                         <?php echo htmlspecialchars( $article->title )?>
                     </a>
 
-                    <?php if (!$results['category'] && $article->categoryId ) { ?>
+                    <?php if (!$results['subcategory'] && $article->subcategoryId ) { ?>
                     <span class="category">
                         in 
-                        <a href=".?action=archive&amp;categoryId=<?php echo $article->categoryId?>">
-                            <?php echo htmlspecialchars( $results['categories'][$article->categoryId]->name ) ?>
+                        <a href=".?action=subarchive&amp;subcategoryId=<?php echo $article->subcategoryId?>">
+                            <?php echo htmlspecialchars( $results['subcategories'][$article->categoryId]->name ) ?>
                         </a>
                     </span>
                     <?php } ?>          

@@ -5,7 +5,10 @@
 
         <form action="admin.php?action=<?php echo $results['formAction']?>" method="post"> 
           <!-- Обработка формы будет направлена файлу admin.php ф-ции newCategory либо editCategory в зависимости от formAction, сохранённого в result-е -->
-        <input type="hidden" name="categoryId" value="<?php echo $results['category']->id ?>"/>
+        
+          
+          
+          <input type="hidden" name="categoryId" value="<?php echo $results['category']->id ?>"/>
 
     <?php if ( isset( $results['errorMessage'] ) ) { ?>
             <div class="errorMessage"><?php echo $results['errorMessage'] ?></div>
