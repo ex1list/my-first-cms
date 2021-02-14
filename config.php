@@ -10,7 +10,7 @@ try {
     $CmsConfiguration = array(); 
     $CmsConfiguration["DB_DSN"] = "mysql:host=localhost;dbname=cms;charset=utf8;" ;
     $CmsConfiguration["DB_USERNAME"] = "root";
-    $CmsConfiguration["DB_PASSWORD"] = "qwe123";
+    $CmsConfiguration["DB_PASSWORD"] = "12345";
     
     // Объявление констант, используемых в проекте
     $CmsConfiguration["CLASS_PATH"] = "classes";
@@ -20,7 +20,8 @@ try {
     $CmsConfiguration["ADMIN_PASSWORD"] = "mypass";
 
     
-    include 'config-local.php'; /* подключаем локальный конфигурационный файл
+   
+    /* подключаем локальный конфигурационный файл
      *  (для конкретной машины/сервера),
      *  в котором мы можем переопределить любые поля конфигурационного массива,
      *  например имя базы данных или пароль */

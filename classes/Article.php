@@ -336,7 +336,14 @@ public static function subgetList($numRows=1000000,
      // foreach ($_POST['groups'] as $author) { 
        // var_dump($this->users_articles);   die();
         //   echo ($this->id);   
-            
+          
+        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );  
+        $sql = "DELETE FROM `users_articles` WHERE article_id = :article_id";
+        $st = $conn->prepare ( $sql );
+        $st->bindValue( ":article_id", $this->id, PDO::PARAM_INT );
+        $st->execute();
+        $conn = null;
+             
         foreach ( $this->users_articles as $user_id ) {
 
           // var_dump($user_id);die();
